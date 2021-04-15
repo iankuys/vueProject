@@ -23,10 +23,29 @@
 </template>
 
 <script>
-export default {
-  props: ["allInventory"],
+import Localbase from "localbase";
 
+let db = new Localbase("db");
+
+export default {
   data() {
-    return {};
+    return {
+      allInventory: [],
+    };
+  },
+  created() {
+    this.collectDB();
+  },
+  methods: {
+    collectDB() {
+      db.collection("donation")
+        .get()
+        .then((donation) => {
+          console.log(donation);
+          this.allInventory = donation;
+        });
+      this.$forceUpdate();
+    },
   },
 };
+</script>
