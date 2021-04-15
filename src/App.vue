@@ -16,7 +16,6 @@ import Inventory from "./components/Inventory.vue";
 
 export default {
   name: "App",
-  props: ["allInventory"],
   components: {
     "add-Form": Add,
     "inventory-Table": Inventory,
