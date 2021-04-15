@@ -4,6 +4,10 @@
 ```
 npm install
 ```
+## Install LocalBase
+```
+npm install localbase --save
+```
 
 ### Compiles and hot-reloads for development
 ```
