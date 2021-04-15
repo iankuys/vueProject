@@ -29,7 +29,7 @@
           id="checkbox-1"
           v-model="status"
           name="checkbox-1"
-          value="beneficiary"
+          checked-value="beneficiary"
           unchecked-value="non beneficiary"
           class="mb-2 mr-sm-2 mb-sm-0"
         >
@@ -49,19 +49,16 @@
       </button>
     </div>
     <p>Values:</p>
-    {{ allInventory }}
-
-    <app v-bind:allInventory="allInventory"></app>
   </div>
 </template>
 
 <script>
-import App from "../App.vue";
+import Localbase from "localbase";
+
+let db = new Localbase("db");
 
 export default {
-  components: {
-    App,
-  },
+  components: {},
   data() {
     return {
       product: "",
@@ -72,17 +69,20 @@ export default {
         { value: "FoodDono", text: "Food Donation" },
         { value: "ClothesDono", text: "Clothes Donation" },
       ],
-      allInventory: [],
     };
   },
   methods: {
     handleSubmit() {
-      this.allInventory.push({
+      this.addDB();
+      this.collectDB();
+      this.clearForm();
+    },
+    addDB() {
+      db.collection("donation").add({
         product: this.product,
         type: this.type,
         status: this.status,
       });
-      this.clearForm();
     },
     clearForm() {
       this.name = "";
