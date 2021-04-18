@@ -29,8 +29,7 @@
           id="checkbox-1"
           v-model="status"
           name="checkbox-1"
-          checked-value="beneficiary"
-          unchecked-value="non beneficiary"
+          value="beneficiary"
           class="mb-2 mr-sm-2 mb-sm-0"
         >
           Check if it is beneficiary
@@ -48,7 +47,6 @@
         Submit
       </button>
     </div>
-    <p>Values:</p>
   </div>
 </template>
 
@@ -63,11 +61,12 @@ export default {
     return {
       product: "",
       type: "",
-      status: "",
+      status: "non-beneficiary",
       options: [
         { value: null, text: "Please select an option" },
-        { value: "FoodDono", text: "Food Donation" },
-        { value: "ClothesDono", text: "Clothes Donation" },
+        { value: "FoodDonation", text: "Food Donation" },
+        { value: "ClothesDonation", text: "Clothes Donation" },
+        { value: "2nd Hand Donation", text: "2nd Hand Donation" }
       ],
     };
   },
