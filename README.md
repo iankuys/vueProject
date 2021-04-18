@@ -4,7 +4,7 @@
 ```
 npm install
 ```
-## Install LocalBase
+## Install LocalBase (api that uses indexeddb)
 ```
 npm install localbase --save
 ```
