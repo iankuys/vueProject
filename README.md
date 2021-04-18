@@ -1,6 +1,6 @@
 # Welcome to my vue js Inventory Management system
 ## Name: Ku Yi Sien
-## Please follow the instruction steps below to run the program
+### Please follow the instruction steps below to run the program
 
 ## Project setup
 ```
