@@ -1,4 +1,5 @@
-# test
+# Welcome to my vue js Inventory Management system
+# Name: Ku Yi Sien
 
 ## Project setup
 ```
